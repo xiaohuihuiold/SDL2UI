@@ -2,6 +2,7 @@
 #ifndef GAME_TEST_VIEW_H
 #define GAME_TEST_VIEW_H
 #include "Draw.h"
+#include<iostream>
 
 class View
 {

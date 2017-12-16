@@ -145,6 +145,17 @@ View *View::getView() {
 	return this;
 }
 
-bool View::onTouchEvent(int action, int button, int x, int y) {
+bool View::onTouchEvent(int action, int button, int tx, int ty) {
+	if (tx > this->getInitX() + this->getX() &&
+		tx<this->getInitX() + this->getX() + this->getWidth() &&
+		ty>this->getInitY() + this->getY() &&
+		ty < this->getInitY() + this->getY() + this->getHeight()) {
+		if (action == View::EVENT_ACTION_DOWN) {
+			std::cout <<this->getName()<< "x:" << this->getInitX() + this->getX() << std::endl;
+			std::cout << "ex:" << this->getInitX() + this->getX() + this->getWidth() << std::endl;
+			this->setBackground(125, 125, 125, 255);
+		}
+		return true;
+	}
 	return false;
 }

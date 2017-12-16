@@ -40,9 +40,27 @@ int ViewGroup::getChildDeep() {
 	return this->getDeep() + 1;
 }
 
-bool ViewGroup::onTouchEvent(int action, int button, int x, int y) {
-	for (int i = 0; i < views.size(); i++) {
-		views[i]->onTouchEvent(action, button, x, y);
+bool ViewGroup::onTouchEvent(int action, int button, int tx, int ty) {
+	bool isTouch = false;
+	if (tx > this->getInitX() + this->getX() &&
+		tx<this->getInitX() + this->getX() + this->getWidth() &&
+		ty>this->getInitY() + this->getY() &&
+		ty < this->getInitY() + this->getY() + this->getHeight()) {
+		for (int i = views.size() - 1; i >= 0; i--) {
+			isTouch = views[i]->onTouchEvent(action, button, tx, ty);
+			if (isTouch) {
+				break;
+			}
+		}
+		if (isTouch) {
+			return true;
+		}
+		if (action == View::EVENT_ACTION_DOWN) {
+			std::cout << this->getName() << "xa:" << this->getInitX() + this->getX() << std::endl;
+			std::cout << "ex:" << this->getInitX() + this->getX() + this->getWidth() << std::endl;
+			this->setBackground(125, 125, 125, 255);
+		}
+		return true;
 	}
 	return false;
 }
