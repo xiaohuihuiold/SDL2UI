@@ -14,6 +14,7 @@ void ViewGroup::onDraw(Draw *canvas) {
 	View::onDraw(canvas);
 	for (int i = 0; i < getViewsSize(); i++) {
 
+		views[i]->setDeep(this->getChildDeep());
 		views[i]->setInitX(this->getX() + this->getInitX());
 		views[i]->setInitY(this->getY() + this->getInitY());
 
@@ -26,7 +27,6 @@ void ViewGroup::onDraw(Draw *canvas) {
 }
 
 int ViewGroup::addView(View *view) {
-	view->setDeep(this->getDeep() + 1);
 	view->setViewParent(this->getView());
 	views.push_back(view);
 	return views.size() - 1;
@@ -34,6 +34,10 @@ int ViewGroup::addView(View *view) {
 
 int ViewGroup::getViewsSize() {
 	return views.size();
+}
+
+int ViewGroup::getChildDeep() {
+	return this->getDeep() + 1;
 }
 
 bool ViewGroup::onTouchEvent(int action, int button, int x, int y) {

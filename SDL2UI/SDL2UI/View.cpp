@@ -37,9 +37,8 @@ void View::onDraw(Draw *canvas) {
 	if (background != nullptr) {
 		canvas->drawRect(cx, cy, width, height, true, background[0], background[1], background[2], background[3]);
 	}
-	if (name != "") {
-		canvas->drawText(name, cx + width / 2, cy + height / 2, 16, true, 1, 255, 255, 255, 255);
-	}
+	canvas->drawText(Util::addStr("Deep:", deep), cx + width / 2, cy + height / 2, 16, true, 1, 255, 255, 255, 255);
+
 }
 
 void View::setID(int id) {

@@ -23,6 +23,7 @@ public:
 
 	virtual int addView(View *view);
 	virtual int getViewsSize();
+	virtual int getChildDeep();
 private:
 	vector<View*> views;
 };
