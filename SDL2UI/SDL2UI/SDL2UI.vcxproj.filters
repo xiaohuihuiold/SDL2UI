@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="头文件\draw">
+      <UniqueIdentifier>{c5268705-3e3c-4488-9ffa-e97534cf43fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\view">
+      <UniqueIdentifier>{eaa11542-1d95-47d8-b18a-cf47d9181b68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\draw">
+      <UniqueIdentifier>{d639ff5c-db86-4ad0-9b2d-c6253934ac9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\view">
+      <UniqueIdentifier>{03195562-90c9-4ee2-a245-a95a2246e309}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -21,6 +33,18 @@
     <ClInclude Include="targetver.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Draw.h">
+      <Filter>头文件\draw</Filter>
+    </ClInclude>
+    <ClInclude Include="Util.h">
+      <Filter>头文件\draw</Filter>
+    </ClInclude>
+    <ClInclude Include="View.h">
+      <Filter>头文件\view</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewGroup.h">
+      <Filter>头文件\view</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -28,6 +52,18 @@
     </ClCompile>
     <ClCompile Include="SDL2UI.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Draw.cpp">
+      <Filter>源文件\draw</Filter>
+    </ClCompile>
+    <ClCompile Include="Util.cpp">
+      <Filter>源文件\draw</Filter>
+    </ClCompile>
+    <ClCompile Include="View.cpp">
+      <Filter>源文件\view</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewGroup.cpp">
+      <Filter>源文件\view</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
