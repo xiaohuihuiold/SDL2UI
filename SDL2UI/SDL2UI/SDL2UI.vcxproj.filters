@@ -45,6 +45,9 @@
     <ClInclude Include="ViewGroup.h">
       <Filter>头文件\view</Filter>
     </ClInclude>
+    <ClInclude Include="ViewParent.h">
+      <Filter>头文件\view</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -63,6 +66,9 @@
       <Filter>源文件\view</Filter>
     </ClCompile>
     <ClCompile Include="ViewGroup.cpp">
+      <Filter>源文件\view</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewParent.cpp">
       <Filter>源文件\view</Filter>
     </ClCompile>
   </ItemGroup>

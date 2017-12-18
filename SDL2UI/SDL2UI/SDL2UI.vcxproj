@@ -153,6 +153,7 @@
     <ClInclude Include="Util.h" />
     <ClInclude Include="View.h" />
     <ClInclude Include="ViewGroup.h" />
+    <ClInclude Include="ViewParent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Draw.cpp" />
@@ -166,6 +167,7 @@
     <ClCompile Include="Util.cpp" />
     <ClCompile Include="View.cpp" />
     <ClCompile Include="ViewGroup.cpp" />
+    <ClCompile Include="ViewParent.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

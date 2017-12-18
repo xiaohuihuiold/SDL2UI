@@ -25,20 +25,18 @@ View::~View()
 }
 
 void View::onDraw(Draw *canvas) {
-	int cx = x + initx;
-	int cy = y + inity;
-
+	int cx = x + viewParent->left;
+	int cy = y + viewParent->top;
 	canvas->setRect(
-		(x < 0 ? initx : cx),
-		(y < 0 ? inity : cy),
-		(cx + width > ex ? ex - cx : width),
-		(cy + height > ey ? ey - cy : height));
+		(x < 0 ? viewParent->left : cx),
+		(y < 0 ? viewParent->top : cy),
+		(cx + width > viewParent->right ? viewParent->right - cx : width),
+		(cy + height > viewParent->bottom ? viewParent->bottom - cy : height));
 
 	if (background != nullptr) {
 		canvas->drawRect(cx, cy, width, height, true, background[0], background[1], background[2], background[3]);
 	}
 	canvas->drawText(Util::addStr("Deep:", deep), cx + width / 2, cy + height / 2, 16, true, 1, 255, 255, 255, 255);
-
 }
 
 void View::setID(int id) {
@@ -47,30 +45,6 @@ void View::setID(int id) {
 
 void View::setName(string name) {
 	this->name = name;
-}
-
-void View::setX(int x) {
-	this->x = x;
-}
-
-void View::setY(int y) {
-	this->y = y;
-}
-
-void View::setEX(int ex) {
-	this->ex = ex;
-}
-
-void View::setEY(int ey) {
-	this->ey = ey;
-}
-
-void View::setInitX(int initx) {
-	this->initx = initx;
-}
-
-void View::setInitY(int inity) {
-	this->inity = inity;
 }
 
 void View::setWidth(int width) {
@@ -93,7 +67,7 @@ void View::setBackground(int r, int g, int b, int a) {
 	background[3] = a;
 }
 
-void View::setViewParent(View *viewParent) {
+void View::setViewParent(ViewParent *viewParent) {
 	this->viewParent = viewParent;
 }
 
@@ -113,14 +87,6 @@ int View::getY() {
 	return this->y;
 }
 
-int View::getInitX() {
-	return this->initx;
-}
-
-int View::getInitY() {
-	return this->inity;
-}
-
 int View::getWidth() {
 	return this->width;
 }
@@ -137,7 +103,7 @@ int *View::getBackground() {
 	return this->background;
 }
 
-View *View::getViewParent() {
+ViewParent *View::getViewParent() {
 	return this->viewParent;
 }
 
@@ -145,14 +111,17 @@ View *View::getView() {
 	return this;
 }
 
+bool View::isOverlap(int tx, int ty) {
+	bool isOver = (tx > viewParent->left + this->getX() &&
+		tx<viewParent->left + this->getX() + this->getWidth() &&
+		ty>viewParent->top + this->getY() &&
+		ty < viewParent->top + this->getY() + this->getHeight());
+	return isOver;
+}
+
 bool View::onTouchEvent(int action, int button, int tx, int ty) {
-	if (tx > this->getInitX() + this->getX() &&
-		tx<this->getInitX() + this->getX() + this->getWidth() &&
-		ty>this->getInitY() + this->getY() &&
-		ty < this->getInitY() + this->getY() + this->getHeight()) {
+	if (isOverlap(tx, ty)) {
 		if (action == View::EVENT_ACTION_DOWN) {
-			std::cout <<this->getName()<< "x:" << this->getInitX() + this->getX() << std::endl;
-			std::cout << "ex:" << this->getInitX() + this->getX() + this->getWidth() << std::endl;
 			this->setBackground(125, 125, 125, 255);
 		}
 		return true;

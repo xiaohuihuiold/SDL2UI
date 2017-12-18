@@ -26,6 +26,8 @@ public:
 	virtual int getChildDeep();
 private:
 	vector<View*> views;
+
+	ViewParent *vp;
 };
 
 #endif
