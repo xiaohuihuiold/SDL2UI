@@ -15,8 +15,8 @@ public:
 
 	void setID(int id);
 	void setName(string name);
-	void setInitX(int initx);
-	void setInitY(int inity);
+	void setX(int x);
+	void setY(int y);
 	void setWidth(int width);
 	void setHeight(int height);
 	void setDeep(int deep);

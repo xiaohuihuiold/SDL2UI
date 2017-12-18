@@ -47,6 +47,14 @@ void View::setName(string name) {
 	this->name = name;
 }
 
+void View::setX(int x) {
+	this->x = x;
+}
+
+void View::setY(int y) {
+	this->y = y;
+}
+
 void View::setWidth(int width) {
 	this->width = width;
 }
@@ -122,8 +130,12 @@ bool View::isOverlap(int tx, int ty) {
 
 bool View::onTouchEvent(int action, int button, int tx, int ty) {
 	if (isOverlap(tx, ty)) {
-		if (action == View::EVENT_ACTION_DOWN) {
-			this->setBackground(125, 125, 125, 255);
+		if (action == View::EVENT_ACTION_MOVE) {
+			this->setBackground(0,0,0, 255);
+			setWidth(50);
+			setHeight(50);
+			setX(getX() + 5);
+			setY(getY() + 5);
 		}
 		return true;
 	}

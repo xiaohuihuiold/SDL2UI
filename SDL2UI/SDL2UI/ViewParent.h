@@ -15,7 +15,6 @@ public:
 	int bottom;
 	int width;
 	int htight;
-
 };
 
 #endif
