@@ -9,6 +9,7 @@ class View
 {
 public:
 	View();
+	View(int width,int height);
 	View(int x, int y, int width, int height);
 	View(string name, int x, int y, int width, int height);
 	~View();

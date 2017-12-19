@@ -8,7 +8,12 @@
 class ViewGroup : public View
 {
 public:
-	ViewGroup();
+	ViewGroup() :View() {
+	
+	}
+	ViewGroup(int width, int height) :View(width, height) {
+
+	}
 	ViewGroup(int x, int y, int width, int height) :View(x, y, width, height) {
 
 	}

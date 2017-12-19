@@ -25,6 +25,12 @@
     <Filter Include="源文件\view">
       <UniqueIdentifier>{03195562-90c9-4ee2-a245-a95a2246e309}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\widget">
+      <UniqueIdentifier>{82eb985b-f8a0-4d45-9ccf-33167c8cb19c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\widget">
+      <UniqueIdentifier>{d2efda2f-2bbd-4021-9e9e-c929e47aea93}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -48,6 +54,9 @@
     <ClInclude Include="ViewParent.h">
       <Filter>头文件\view</Filter>
     </ClInclude>
+    <ClInclude Include="LinearLayout.h">
+      <Filter>头文件\widget</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -70,6 +79,9 @@
     </ClCompile>
     <ClCompile Include="ViewParent.cpp">
       <Filter>源文件\view</Filter>
+    </ClCompile>
+    <ClCompile Include="LinearLayout.cpp">
+      <Filter>源文件\widget</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
