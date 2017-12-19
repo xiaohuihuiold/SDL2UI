@@ -2,11 +2,6 @@
 #include "LinearLayout.h"
 
 
-LinearLayout::LinearLayout()
-{
-}
-
-
 LinearLayout::~LinearLayout()
 {
 }

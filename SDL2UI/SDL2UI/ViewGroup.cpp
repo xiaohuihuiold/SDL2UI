@@ -1,11 +1,6 @@
 #include "stdafx.h"
 #include "ViewGroup.h"
 
-
-ViewGroup::ViewGroup()
-{
-}
-
 ViewGroup::~ViewGroup()
 {
 }
